@@ -1,5 +1,4 @@
 import 'server-only'
-
 import {
   createAI,
   createStreamableUI,
@@ -8,8 +7,9 @@ import {
   streamUI,
   createStreamableValue
 } from 'ai/rsc'
-import { openai } from '@ai-sdk/openai'
 
+import { google } from '@ai-sdk/google'
+import { GoogleGenerativeAI } from '@google/generative-ai'
 import {
   spinner,
   BotCard,
@@ -18,7 +18,6 @@ import {
   Stock,
   Purchase
 } from '@/components/stocks'
-
 import { z } from 'zod'
 import { EventsSkeleton } from '@/components/stocks/events-skeleton'
 import { Events } from '@/components/stocks/events'
@@ -36,6 +35,9 @@ import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
 import { Chat, Message } from '@/lib/types'
 import { auth } from '@/auth'
 
+const genAI = new GoogleGenerativeAI(
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY || ''
+)
 async function confirmPurchase(symbol: string, price: number, amount: number) {
   'use server'
 
@@ -127,7 +129,8 @@ async function submitUserMessage(content: string) {
   let textNode: undefined | React.ReactNode
 
   const result = await streamUI({
-    model: openai('gpt-3.5-turbo'),
+    // model: openai('gpt-3.5-turbo'),
+    model: google('models/gemini-1.5-flash'),
     initial: <SpinnerMessage />,
     system: `\
     You are a stock trading conversation bot and you can help users buy stocks, step by step.

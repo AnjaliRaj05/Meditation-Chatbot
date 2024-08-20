@@ -11,10 +11,10 @@ import { Toaster } from '@/components/ui/sonner'
 export const metadata = {
   metadataBase: process.env.VERCEL_URL
     ? new URL(`https://${process.env.VERCEL_URL}`)
-    : undefined,
+    : new URL('http://localhost:3000'), // Fallback for local development
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'Meditation Chatbot',
+    template: `%s - Meditation Chatbot`
   },
   description: 'An AI-powered chatbot template built with Next.js and Vercel.',
   icons: {

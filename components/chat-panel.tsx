@@ -36,25 +36,37 @@ export function ChatPanel({
 
   const exampleMessages = [
     {
-      heading: 'What are the',
-      subheading: 'trending memecoins today?',
-      message: `What are the trending memecoins today?`
+      heading: 'What is meditation',
+      subheading: 'how can it benefit me?',
+      message: `What are the different types of meditation techniques I can try?`
     },
     {
-      heading: 'What is the price of',
-      subheading: '$DOGE right now?',
-      message: 'What is the price of $DOGE right now?'
+      heading: 'Types of meditation..?',
+      subheading: 'Different techniques to explore',
+      message: 'Guide'
     },
     {
-      heading: 'I would like to buy',
-      subheading: '42 $DOGE',
-      message: `I would like to buy 42 $DOGE`
+      heading: 'Guided meditation',
+      subheading: 'Recommendations for beginners',
+      message: `Can you recommend a guided meditation for beginners?`
     },
     {
-      heading: 'What are some',
-      subheading: `recent events about $DOGE?`,
-      message: `What are some recent events about $DOGE?`
-    }
+      heading: 'Mindfulness meditation',
+      subheading: `Effective techniques for relaxation`,
+      message: `What are some effective breathing exercises for relaxation?`
+    },
+    {
+      heading: 'Meditation for stress relief',
+      subheading: 'Managing stress and anxiety',
+      message: `How can meditation help me manage stress and anxiety?`
+    },
+    {
+      heading: 'Meditation duration',
+      subheading: 'Finding the right length',
+      message: `How long should I meditate each day to see benefits?`
+    },
+    
+    
   ]
 
   return (
